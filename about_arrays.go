@@ -22,8 +22,11 @@ func aboutArrays() {
 	assert(tasty_fruits[0] == "orange") // slices of arrays share some data
 	assert(tasty_fruits[1] == "mango") // albeit slightly askewed
 
-	// Wait what? Why is the capacity 3 of all things?
-	// Definitely RTFM on that bit...
+	// So it turns out that the length of a slice is what you'd expect
+	// because it's the size of the view you created. However, since
+	// a slice is a view into an array, technically the capacity is
+	// from the slice's starting index in the array, to the array's
+	// last index
 	assert(len(tasty_fruits) == 2) // its length is manifest
 	assert(cap(tasty_fruits) == 3) // but its capacity is surprising!
 
